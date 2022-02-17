@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/r.css'%}">
+    <script defer src="{%static 'js/r.js'%}"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Admin Registration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="heading">
+                <h1>Registration</h1>
+                <p>Fill in the information to proceed.</p>
+            </div>
+            <form id="form" action="/adminregister" method="post" >
+            {% csrf_token %}
+            <div class="inp">
+                <label>Name:</label>
+                <input name="name" id="name" type="text" placeholder="Enter your name">
+                <label>User Name:</label>
+                <input name="username" id="username" type="text" placeholder="Enter your username">
+                <label>Email:</label>
+                <input name="email" id="email" type="Email" placeholder="Enter your email">
+                <label>Phone Number:</label>
+                <input name="phonenumber" id="number" type="number" placeholder="Enter your phone number">
+                <label>Password:</label>
+                <input name="password" id="password" type="password" placeholder="Enter your password">
+            </div>
+            <div id ="emailerror"></div>
+            <button class="btn" type="submit" value="submit">Sign Up</button>
+            <p>Already have an account? <a href="l.html"><b>Login</b></a></p>
+        </div>
+    </div>
+</form>
+</body>
+</html>

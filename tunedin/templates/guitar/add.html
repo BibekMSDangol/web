@@ -1,0 +1,54 @@
+{% extends 'admin/tdash.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/addcus.css'%}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="heading">
+                <h1>Add Guitar</h1>
+            </div>
+            <form id="form" action="/guitar/guitaradd" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="wrap" id="form">
+                    <div class="first">
+                        <label>Guitar Type</label>
+                        <select name="guitar_type">
+                            <option>Select Here</option>
+                            <option>Acoustic Guitar</option>
+                            <option>Electric Guitar</option>
+                            <option>Electro-Acoustic Guitar</option>
+                            <option>Bass Guitar</option>
+                        </select>
+                    </div>
+                    <div class="last">
+                        <label>Name:</label>
+                        <input name="name" id="lname" type="text" placeholder="Enter your Last Name">
+                    </div>
+                </div>
+                <div class="wrap1">
+                    <label>Price:</label>
+                    <input name="price" id="price" type="text" placeholder="Enter the price">
+                </div>
+                <div class="wrap1">
+                    <label>Image:</label>
+                    <input name="image" id="number" type="file">
+                </div>
+                <button class="btn" type="submit" value="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

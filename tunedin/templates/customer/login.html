@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/log.css'%}">
+    <script defer src="{%static 'js/log.js'%}"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="heading">
+                <h1>Login</h1>
+                <p>Fill in the information to proceed.</p>
+            </div>
+            <form id="form" action="/customer/customer_log" method="post">
+            {% csrf_token %}
+            <div class="inp">
+                <label>Email:</label>
+                <input name="email" id="email" type="email" placeholder="Enter your email address">
+                <label>Password:</label>
+                <input name="password" id="password" type="password" placeholder="Enter your password">
+            </div>
+            <div id ="emailerror"></div>
+            <button class="btn" type="submit" value="submit">Login</button>
+            <p>Don't have an account? <a href="reg.html"><b>Sign Up</b></a></p>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/k.jpg' %}" class="img" alt=""/>
+        </div>
+    </div>
+</form>
+</body>
+</html>

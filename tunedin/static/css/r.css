@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:powderblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading{
+    width: 80%;
+    text-align: center;
+}
+h1{
+    font-weight: 420;
+    font-size: 50px;
+    color:royalblue;
+}
+input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.container{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 90vh;
+    background-color: white;
+    display:flex;
+    box-shadow: 5px;
+    border-radius: 10px;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+.image{
+    width: 45%;
+}
+.img{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.inp{
+    width: 85%;
+    margin-bottom: 10px;
+    position:relative;
+}
+.btn{
+    font-size: 20px;
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: royalblue;
+    border: 2px solid royalblue;
+    transition-duration: 0.5s;
+}
+.btn:hover{
+    background-color:darkblue;
+    color: white;
+
+}
+label{
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    display: flex;
+    width: 80%;
+    min-height: 25px;
+    align-items: center;
+}
+input{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    transition:all 0.3s ease;
+    border: 2px solid gray;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: royalblue;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width:1250px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media(max-width:768px) {
+    .container{
+        width: 100%;
+        height: 110vh !important;
+        position: static;
+        transform: translate(0,0);
+    }
+}
+@media(max-width:1000px){
+    .image{
+        display: none;
+    }
+    .container{
+        height: 95vh;
+    }
+    .form{
+        width: 100%;
+    }
+}
+@media(max-width:500px){
+    .inp{
+        flex-direction: column;
+    }
+}
+#emailerror{
+    color: tomato;
+}

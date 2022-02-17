@@ -1,0 +1,41 @@
+{% extends 'admin/tdash.html'%}
+{% block content %}
+<div class="col-lg-12 mt-3 ">
+    <h2 style="text-align: center;font-weight: 400;">Guitar Info</h2>
+
+    <div class="table-responsive-md  table-responsive-sm">
+        <table class="table table-striped" style="width:100em;transition: all 0.3s ease; background-color: antiquewhite;">
+            <thead class="thead bg-royalblue">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Guitar Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            {% for guitar in guitars %}
+            <tr class="tbody">
+                <td>{{guitar.id}}</td>
+                <td>{{guitar.guitar_type}}</td>
+                <td>{{guitar.name}}</td>
+                <td>{{guitar.price}}</td>
+                {% load static %}
+                <td>
+                    <img width="100" src="{% static 'images/' %}{{guitar.image}}"/>
+                </td>
+                <th>
+                    <a href="/guitar/guitaredit/{{guitar.id}}"><button class="btn btn-success">Edit</button></a>
+                    |
+                    <a href="/guitar/guitardelete/{{guitar.id}}"><button class="btn btn-danger">Delete</button></a>
+                </th>
+            </tr>
+
+            {% endfor %}
+        </table>
+        <a href="/guitar/guitaradd">
+            <button class="btn btn-success mb-10 mt-2" style="margin-left: 700px;width: 120px;border-radius: 20px;background-color: cornflowerblue;border: 3px solid royalblue;" ></i>Add Guitar</button>
+        </a>
+    </div>
+    {% endblock %}

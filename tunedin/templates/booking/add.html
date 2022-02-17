@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <!-- <script defer src="{% static 'js/booking.js'%}"></script> -->
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Booking</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="form">
+            <div class="heading">
+                <h1>Booking</h1>
+                <p>Fill in the information to proceed.</p>
+            </div>
+            <form id="form" action="/booking/bookingadd" method="post">
+            {% csrf_token %}
+            <div class="wrap" id="form">
+                <div class="first">
+                    <label>First Name:</label>
+                    <input name="first_name" id="fname" type="text" placeholder="Enter your First Name">
+                    <span class="focus-input"></span>
+                </div>
+                <div class="last">
+                    <label>Last Name:</label>
+                    <input name="last_name" id="lname" type="text" placeholder="Enter your Last Name">
+                    <span class="focus-input"></span>
+                </div>
+            </div>
+            <div class="wrap1">
+                <label>Email:</label>
+                <input name="email" id="email" type="email" placeholder="Enter your Email Address">
+                <span class="focus-input"></span>
+                <div id ="emailerror"></div>
+            </div>
+            <div class="wrap1">
+                <label>Phone Number:</label>
+                <input name="phone_number" id="number" type="number" placeholder="Enter your phonenumber">
+                <span class="focus-input"></span>
+                <div id ="numbererror"></div>
+            </div>
+            <div class="wrap1">
+                <label>Shipping Address:</label>
+                <input name="address" id="password" type="text" placeholder="Enter your address">
+                <span class="focus-input"></span>
+                <div id ="addresserror"></div>
+            </div>
+            <div id ="nameerror"></div>
+            <button class="btn" type="submit" value="submit">Buy</button>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/g.jpg' %}" class="img" alt=""/>
+        </div>
+    </div>
+</form>
+</body>
+</html>
