@@ -10,7 +10,7 @@ class TestUrls(SimpleTestCase):
         url=reverse('customerview')
         self.assertEquals(resolve(url).func, customerview)
 
-    def test_case_addadmin_url(self):
+    def test_case_addcustomer_url(self):
         url=reverse('addcustomer')
         self.assertEquals(resolve(url).func, addcustomer)
 
