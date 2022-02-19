@@ -20,7 +20,8 @@ form.addEventListener('submit' ,(e)  => {
         errorElement.innerHTML = messages.join(' , ' )
     }
     else{
-        alert("Registered Successfully")
+        alert("Login Successfull")
     }
+    
 })
 
