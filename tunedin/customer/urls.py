@@ -1,17 +1,18 @@
+from unicodedata import name
 from django.urls import path
 from customer import views
 
 
 urlpatterns = [
-    path('', views.index),
-    path('adminregister', views.register),
-    path('adminlogin', views.login),
+    path('', views.index, name="index"),
+    path('adminregister', views.register, name="adminregister"),
+    path('adminlogin', views.login, name="adminlogin"),
     path('homepage', views.homepage),
-    path('addcustomer', views.addcustomer),
-    path('customerview', views.customerview),
-    path('editcustomer/<int:id>', views.editcustomer),
-    path('updatecustomer/<int:id>', views.updatecustomer),
-    path('deletecustomer/<int:id>', views.deletecustomer),
+    path('addcustomer', views.addcustomer, name="addcustomer"),
+    path('customerview', views.customerview, name="customerview"),
+    path('editcustomer/<int:id>', views.editcustomer, name="editcustomer"),
+    path('updatecustomer/<int:id>', views.updatecustomer, name="updatecustomer"),
+    path('deletecustomer/<int:id>', views.deletecustomer, name="deletecustomer"),
     path('acoustic',views.acoustic),
     path('all',views.all),
     path('electric',views.electric),
