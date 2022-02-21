@@ -1,0 +1,35 @@
+{% extends 'admin/tdash.html'%}
+{% block content %}
+<div class="col-lg-12 mt-3 ">
+    <h2 style="text-align: center;font-weight: 400;">Customer Details</h2>
+
+    <div class="table-responsive-md  table-responsive-sm">
+        <table class="table table-hover table-striped"
+            style="width:100em;transition: all 0.3s ease; background-color: antiquewhite;">
+            <thead class="thead bg-royalblue">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Need</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            {% for feedback in feedback %}
+            <tr class="tbody">
+                <td>{{feedback.id}}</td>
+                <td>{{feedback.name}}</td>
+                <td>{{feedback.phone_number}}</td>
+                <td>{{feedback.email}}</td>
+                <td>{{feedback.need}}</td>
+                <td>{{feedback.message}}</td>
+                <th>
+                    <a href="/feedback/feedbackdelete/{{feedback.id}}"><button class="btn btn-danger">Delete</button></a>
+                </th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endblock %}

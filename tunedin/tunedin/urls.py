@@ -22,5 +22,7 @@ urlpatterns = [
     path('', include('customer.urls')),
     path('user/', include('user.urls')),
     path('guitar/',include('guitar.urls')),
-    path('booking/',include('booking.urls'))
+    path('booking/',include('booking.urls')),
+    path('feedback/', include('feedback.urls'))
+
 ]

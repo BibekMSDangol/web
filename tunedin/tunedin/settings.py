@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'customer',
     'user',
     'guitar',
-    'booking'
+    'booking', 
+    'feedback'
     
 ]
 
