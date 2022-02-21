@@ -38,6 +38,8 @@ class TestUrls(SimpleTestCase):
         url=reverse('deletecustomer', args=[1])
         self.assertEquals(resolve(url).func, deletecustomer)
 
+
+
 class TestViews(TestCase):
     def test_case_customerview_views(self):
         client=Client()
