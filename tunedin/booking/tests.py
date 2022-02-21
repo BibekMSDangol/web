@@ -20,7 +20,7 @@ class TestViews(TestCase):
     def test_case_bookingview_views(self):
         client=Client()
         url=reverse('bookingview')
-
+        
         response=client.get(url)
         print(response)
         self.assertTemplateUsed(response, 'booking/view.html')
